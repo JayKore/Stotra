@@ -7,7 +7,14 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #f5f5f5;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, 
+    #1976D2 0%,          /* Strong blue */
+    #1976D2 45%, 
+    #FFD700 55%,         /* Vivid yellow */
+    #FFD700 100%
+  );
+    background-attachment: fixed;
 }
 
 /* Login page container */
@@ -31,12 +38,12 @@ body {
 .toggle-label {
   font-size: 16px;
   font-weight: 600;
-  color: #666;
+  color: #333;
   transition: color 0.3s;
 }
 
 .toggle-label.active {
-  color: #2196F3;
+  color: #1976D2;
 }
 
 /* Switch styles */
@@ -78,7 +85,7 @@ body {
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #1976D2;
 }
 
 input:checked + .slider:before {
@@ -88,9 +95,9 @@ input:checked + .slider:before {
 /* Login card styles */
 .login-card {
   display: flex;
-  background: white;
+  background: rgba(255, 255, 255, 0.95);
   border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   overflow: hidden;
   width: 800px;
   max-width: 90%;
@@ -127,7 +134,7 @@ input:checked + .slider:before {
 }
 
 .farmer-photo {
-background-image: url('https://t4.ftcdn.net/jpg/02/49/44/77/360_F_249447740_y1nJDCFwqVMbRzeV8VQu0NIOdlyPk7ZY.jpg');
+  background-image: url('https://t4.ftcdn.net/jpg/02/49/44/77/360_F_249447740_y1nJDCFwqVMbRzeV8VQu0NIOdlyPk7ZY.jpg');
 }
 
 .vendor-photo {
@@ -161,18 +168,19 @@ background-image: url('https://t4.ftcdn.net/jpg/02/49/44/77/360_F_249447740_y1nJ
   border-radius: 8px;
   font-size: 16px;
   transition: border-color 0.3s;
+  color: black;
 }
 
 .form-group input:focus {
   outline: none;
-  border-color: #2196F3;
-  box-shadow: 0 0 0 3px rgba(33,150,243,0.1);
+  border-color: #1976D2;
+  box-shadow: 0 0 0 3px rgba(25,118,210,0.1);
 }
 
 .login-button {
   width: 100%;
   padding: 12px;
-  background-color: #2196F3;
+  background-color: #1976D2;
   color: white;
   border: none;
   border-radius: 8px;
@@ -183,7 +191,7 @@ background-image: url('https://t4.ftcdn.net/jpg/02/49/44/77/360_F_249447740_y1nJ
 }
 
 .login-button:hover {
-  background-color: #1976D2;
+  background-color: #1565C0;
 }
 
 .links {
@@ -200,7 +208,7 @@ background-image: url('https://t4.ftcdn.net/jpg/02/49/44/77/360_F_249447740_y1nJ
 }
 
 .links a:hover {
-  color: #2196F3;
+  color: #1976D2;
 }
 
 /* Responsive design */
@@ -224,13 +232,12 @@ background-image: url('https://t4.ftcdn.net/jpg/02/49/44/77/360_F_249447740_y1nJ
   }
 }
 
-
 .go-back-button {
   position: absolute;
   top: 20px;
   left: 20px;
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: transparent;
   color: white;
   border: none;
   border-radius: 5px;
@@ -238,5 +245,27 @@ background-image: url('https://t4.ftcdn.net/jpg/02/49/44/77/360_F_249447740_y1nJ
 }
 
 .go-back-button:hover {
-  background-color: #0056b3;
+  background-color: #0058bc;
 }
+
+/* Modified body styles for full-screen background */
+body {
+  font-family: 'Arial', sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ), 
+    url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAW2N_Z_udaPFY1kB1I9FtJNjgx5a4u8N86yNPVQJzYgjsXX9jqnqJynNtl1i_32MeMWw&usqp=CAU') center/cover fixed;
+  /* The linear-gradient adds a dark overlay for better text readability */
+  /* Replace the image URL with your preferred background */
+}
+
+/* Updated login card background transparency */
+.login-card {
+  background: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+  /* ... rest of the existing styles remain the same ... */
+}
+
+/* Remove the old body gradient */
+/* Keep all other existing styles the same */

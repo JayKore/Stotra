@@ -1,11 +1,10 @@
-/* Global Reset */
+/* LandingPage.css */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Landing Container */
 .landing-container {
   position: relative;
   width: 100%;
@@ -19,19 +18,17 @@
   text-align: center;
 }
 
-/* Background Video */
 .background-video {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures the video covers the entire container */
-  z-index: -1; /* Places the video behind other content */
-  filter: brightness(0.7); /* Darkens the video for better text visibility */
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(0.7);
 }
 
-/* Background Overlay */
 .background-overlay {
   position: absolute;
   top: 0;
@@ -42,7 +39,6 @@
   z-index: 0;
 }
 
-/* Navbar */
 .navbar {
   position: absolute;
   top: 0;
@@ -57,12 +53,17 @@
 
 .logo img {
   height: 70px;
-  background: white;
+  filter: invert(100%);
 }
 
 .nav-links {
   display: flex;
-  gap: 20px;
+  gap: 30px;
+  margin-right: 40px;
+}
+
+.nav-item {
+  position: relative;
 }
 
 .nav-link {
@@ -71,13 +72,50 @@
   font-weight: bold;
   font-size: 1.1rem;
   transition: color 0.3s ease;
+  padding: 10px 15px;
 }
 
 .nav-link:hover {
-  color: #007bff; /* Hover effect */
+  color: #007bff;
 }
 
-/* Main Content */
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  min-width: 250px;
+  text-align: left;
+  animation: slideDown 0.3s ease-out;
+}
+
+.dropdown-content h4 {
+  margin-bottom: 10px;
+  color: #2c662d;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 5px;
+}
+
+.dropdown-content ul {
+  list-style: none;
+}
+
+.dropdown-content li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-content p {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .main-content {
   position: relative;
   z-index: 1;
@@ -89,20 +127,13 @@
   font-size: 4rem;
   font-weight: bold;
   margin-bottom: 10px;
-  animation: fadeInUp 1s ease-out; /* Animation */
-}
-
-.main-content h2 {
-  font-size: 2.5rem;
-  font-weight: normal;
-  margin-bottom: 20px;
-  animation: fadeInUp 1.5s ease-out; /* Animation */
+  animation: fadeInUp 1s ease-out;
 }
 
 .main-content p {
   font-size: 1.2rem;
   margin-bottom: 30px;
-  animation: fadeInUp 2s ease-out; /* Animation */
+  animation: fadeInUp 2s ease-out;
 }
 
 .cta-button {
@@ -110,18 +141,18 @@
   font-size: 1.2rem;
   font-weight: bold;
   color: white;
-  /* background-color: #007bff; */
-  border: 1px solid white;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid white;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  animation: fadeInUp 2.5s ease-out; /* Animation */
+  transition: all 0.3s ease;
+  animation: fadeInUp 2.5s ease-out;
 }
 
 .cta-button:hover {
-  background-color: #0056b3; 
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
 }
-
 
 @keyframes fadeInUp {
   from {
@@ -132,4 +163,92 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .nav-links {
+    gap: 15px;
+    margin-right: 20px;
+  }
+  
+  .nav-link {
+    font-size: 1rem;
+  }
+  
+  .dropdown-content {
+    min-width: 200px;
+    padding: 15px;
+  }
+}
+
+/* Add these styles to your existing CSS */
+.nav-item {
+  position: relative;
+}
+
+/* For Services dropdown */
+.nav-item:first-child .dropdown-content {
+  left: 0;
+  right: auto;
+}
+
+/* For Contact dropdown */
+.nav-item:last-child .dropdown-content {
+  left: auto;
+  right: 0;
+}
+
+/* Update existing dropdown-content */
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  min-width: 250px;
+  text-align: left;
+  animation: slideDown 0.3s ease-out;
+  /* Add these lines */
+  max-width: 90vw; /* Ensure it doesn't exceed viewport width */
+  margin-right: 20px; /* Add some spacing from screen edge */
+}
+
+/* For mobile responsiveness */
+@media (max-width: 768px) {
+  .dropdown-content {
+    right: 0 !important;
+    left: auto !important;
+    transform: translateX(0);
+    min-width: 200px;
+    max-width: 80vw;
+  }
+  
+  .nav-item:first-child .dropdown-content {
+    right: 0;
+    left: auto;
+  }
+}
+
+
+
+.mode{
+  margin: 1rem;
+  flex-shrink: calc(23);
 }

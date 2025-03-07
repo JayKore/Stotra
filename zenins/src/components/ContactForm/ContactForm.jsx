@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './ContactForm.css';
+import farmerVideo from './farmer1.mp4';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -30,6 +31,12 @@ const ContactForm = () => {
 
   return (
     <div className="form-container">
+        {/* Background Video */}
+            <video className="background-video" autoPlay loop muted playsInline>
+              <source src={farmerVideo} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+      
       <button className="back-button" onClick={handleGoBack}>
         ← Go Back
       </button>

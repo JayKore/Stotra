@@ -77,3 +77,102 @@
     width: 90%;
   }
 }
+
+
+body {
+  font-family: 'Arial', sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ), 
+    url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAW2N_Z_udaPFY1kB1I9FtJNjgx5a4u8N86yNPVQJzYgjsXX9jqnqJynNtl1i_32MeMWw&usqp=CAU') center/cover fixed;
+}
+
+.login-card {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+
+/* Services.css */
+/* Remove body styles from here (should be in global CSS) */
+
+/* Services Page Styles */
+.services-page {
+  padding: 80px 20px 40px; /* Added top padding for the go-back button */
+  min-height: 100vh;
+  color: white; /* Changed text color for better contrast */
+}
+
+.services-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #FFD700; /* Changed to gold for better visibility */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.services-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+  border-radius: 15px;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.service-category {
+  background: rgba(255, 255, 255, 0.95); /* More opaque background */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 45%;
+  max-width: 500px;
+}
+
+.service-category h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #4CAF50; /* Keep green for category titles */
+}
+
+.service-item {
+  background-color: rgba(241, 248, 233, 0.9); /* Semi-transparent background */
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* Keep rest of the existing styles, adjust colors as needed */
+/* Global CSS */
+body {
+  font-family: 'Arial', sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.6), 
+      rgba(0, 0, 0, 0.6)
+    ), 
+    url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAW2N_Z_udaPFY1kB1I9FtJNjgx5a4u8N86yNPVQJzYgjsXX9jqnqJynNtl1i_32MeMWw&usqp=CAU') center/cover fixed;
+}
+
+.go-back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: rgb(3, 3, 7);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000;
+  /* size: 2rem; */
+}
+
+.go-back-button:hover {
+  color: #086ee2;
+  background: transparent;
+}
