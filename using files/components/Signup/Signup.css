@@ -1,0 +1,305 @@
+/* Base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+/* Signup container */
+.signup-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(-45deg, #4CAF50, #81C784, #A5D6A7, #C8E6C9);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  position: relative;
+  transition: background 0.5s ease;
+}
+
+/* Farmer background gradient */
+.signup-container.farmer {
+  background: linear-gradient(-45deg, #4CAF50, #81C784, #A5D6A7, #C8E6C9);
+}
+
+/* Vendor background gradient */
+.signup-container.vendor {
+  background: linear-gradient(-45deg, #2196F3, #64B5F6, #90CAF9, #BBDEFB);
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Signup card */
+.signup-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  width: 90%;
+  max-width: 500px;
+  transform: translateY(0);
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.signup-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+/* Signup title */
+.signup-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  position: relative;
+}
+
+.signup-title::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #4CAF50;
+  margin: 10px auto;
+  border-radius: 2px;
+}
+
+/* Form styles */
+.signup-form .form-group {
+  margin-bottom: 20px;
+}
+
+.signup-form input {
+  width: 100%;
+  padding: 12px 20px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.signup-form input:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+}
+
+/* Signup button */
+.signup-button {
+  width: 100%;
+  padding: 12px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.signup-button:hover {
+  background: #45a049;
+  transform: translateY(-2px);
+}
+
+/* Login link */
+.login-link {
+  text-align: center;
+  margin-top: 20px;
+  color: #666;
+}
+
+.login-link a {
+  color: #4CAF50;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.login-link a:hover {
+  color: #45a049;
+}
+
+/* Toggle switch styles */
+.toggle-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px 20px;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.toggle-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #666;
+  transition: color 0.3s;
+}
+
+.toggle-label.active {
+  color: #4CAF50;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #4CAF50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .signup-card {
+    padding: 30px;
+    margin: 20px;
+  }
+
+  .signup-title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .signup-card {
+    padding: 20px;
+  }
+
+  .signup-title {
+    font-size: 1.5rem;
+  }
+
+  .toggle-container {
+    padding: 8px 15px;
+    gap: 10px;
+  }
+}
+
+
+.password-group {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  user-select: none;
+}
+
+
+/* Base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+/* Signup container */
+.signup-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  position: relative;
+  transition: background 0.5s ease;
+}
+
+/* Farmer background gradient */
+.signup-container.farmer {
+  background: linear-gradient(-45deg, #4CAF50, #81C784, #A5D6A7, #C8E6C9);
+}
+
+/* Vendor background gradient */
+.signup-container.vendor {
+  background: linear-gradient(-45deg, #2196F3, #64B5F6, #90CAF9, #BBDEFB);
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Rest of your CSS remains the same */
+
+
+.go-back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.go-back-button:hover {
+  background-color: #0056b3;
+}
