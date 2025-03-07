@@ -1,207 +1,225 @@
+/* Base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
+}
+
+/* Login page container */
 .login-page-container {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(-45deg, #4CAF50, #81C784, #A5D6A7, #C8E6C9);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
-    position: relative;
-  }
-  
-  @keyframes gradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Toggle switch container */
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 2rem;
+}
+
+.toggle-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #666;
+  transition: color 0.3s;
+}
+
+.toggle-label.active {
+  color: #2196F3;
+}
+
+/* Switch styles */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Login card styles */
+.login-card {
+  display: flex;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  overflow: hidden;
+  width: 800px;
+  max-width: 90%;
+  min-height: 500px;
+}
+
+.photo-section {
+  flex: 1;
+  padding: 40px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.photo-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+.photo-section h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  z-index: 1;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.farmer-photo {
+background-image: url('https://t4.ftcdn.net/jpg/02/49/44/77/360_F_249447740_y1nJDCFwqVMbRzeV8VQu0NIOdlyPk7ZY.jpg');
+}
+
+.vendor-photo {
+  background-image: url('https://media.istockphoto.com/id/1369521990/photo/young-woman-paying-with-mobile-phone-at-a-street-market.jpg?s=612x612&w=0&k=20&c=GiYASMoyWO67fkJa0WingXvH9fYoan0I_pqPQRtfIjw=');
+}
+
+/* Form section styles */
+.form-section {
+  flex: 1;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #333;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #2196F3;
+  box-shadow: 0 0 0 3px rgba(33,150,243,0.1);
+}
+
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: #1976D2;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.links a {
+  color: #666;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.links a:hover {
+  color: #2196F3;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
   .login-card {
-    display: flex;
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-    overflow: hidden;
-    max-width: 800px;
-    width: 90%;
-    min-height: 500px;
-    transform: translateY(0);
-    transition: all 0.3s ease;
+    flex-direction: column;
+    min-height: auto;
   }
-  
-  .login-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-  }
-  
+
   .photo-section {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 30px;
-    background-size: cover;
-    background-position: center;
-    transition: all 0.3s ease;
+    min-height: 200px;
   }
-  
-  .farmer-photo {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3');
-    color: white;
+
+  .photo-section h2 {
+    font-size: 2rem;
   }
-  
-  .vendor-photo {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1556745753-b2904692b3cd');
-    color: white;
-  }
-  
+
   .form-section {
-    flex: 1;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    padding: 40px 30px;
   }
-  
-  .form-section h3 {
-    margin-bottom: 30px;
-    color: #333;
-    font-size: 1.8rem;
-    position: relative;
-  }
-  
-  .form-section h3::after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 3px;
-    background: #4CAF50;
-    margin-top: 10px;
-    border-radius: 2px;
-  }
-  
-  .form-group {
-    margin-bottom: 20px;
-  }
-  
-  .form-group input {
-    width: 100%;
-    padding: 12px 20px;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    font-size: 16px;
-    transition: all 0.3s ease;
-  }
-  
-  .form-group input:focus {
-    border-color: #4CAF50;
-    box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
-  }
-  
-  .login-button {
-    width: 100%;
-    padding: 12px;
-    background: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 20px;
-  }
-  
-  .login-button:hover {
-    background: #45a049;
-    transform: translateY(-2px);
-  }
-  
-  .links {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-  }
-  
-  .links a {
-    color: #666;
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s ease;
-  }
-  
-  .links a:hover {
-    color: #4CAF50;
-  }
-  
-  /* Toggle Container */
-  .toggle-container {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 10px 20px;
-    border-radius: 30px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    z-index: 1000;
-  }
-  
-  .toggle-label {
-    font-weight: 600;
-    color: #999;
-    transition: color 0.3s ease;
-  }
-  
-  .toggle-label.active {
-    color: #333;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .login-card {
-      flex-direction: column;
-      min-height: auto;
-      margin-top: 80px;
-    }
-    
-    .photo-section {
-      padding: 20px;
-      min-height: 200px;
-    }
-    
-    .form-section {
-      padding: 30px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .login-card {
-      width: 95%;
-      margin-top: 70px;
-    }
-    
-    .form-section {
-      padding: 20px;
-    }
-    
-    .form-section h3 {
-      font-size: 1.5rem;
-    }
-    
-    .login-button {
-      padding: 10px;
-      font-size: 14px;
-    }
-    
-    .links a {
-      font-size: 12px;
-    }
-  
-    .toggle-container {
-      padding: 8px 15px;
-      gap: 10px;
-    }
-  }
+}

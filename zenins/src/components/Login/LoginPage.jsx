@@ -19,7 +19,7 @@ const LoginPage = () => {
     <div className="login-page-container">
       <div className="toggle-container">
         <span className={`toggle-label ${isFarmer ? 'active' : ''}`}>Farmer</span>
-        <label className="toggle-switch">
+        <label className="switch">
           <input 
             type="checkbox" 
             checked={!isFarmer}

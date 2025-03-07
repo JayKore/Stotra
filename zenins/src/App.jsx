@@ -39,11 +39,17 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LoginPage from './components/Login/LoginPage';
 import SignupPage from './components/Signup/SignupPage';
 import ForgotPassword from './components/ForgotPassword/ForgotPassword';
+import LandingPage from './components/LandingPage/LandingPage';
+import '../src/components/LandingPage/LandingPage.css';
+// import '../src/components/LandingPage/'
+
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<LoginPage />} />
+        <Route path='/' element={<LandingPage />} />
+        <Route path="/landing" element={<LandingPage />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
       </Routes>

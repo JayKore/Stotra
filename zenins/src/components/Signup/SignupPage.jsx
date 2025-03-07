@@ -4,23 +4,35 @@ import './Signup.css';
 
 const SignupPage = () => {
   const [isFarmer, setIsFarmer] = useState(true);
-  const [formData, setFormData] = useState({
+  const [signupData, setSignupData] = useState({
     name: '',
     email: '',
     password: '',
     confirmPassword: ''
   });
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSignup = (e) => {
     e.preventDefault();
     // Handle signup logic
+    console.log('Signup Data:', signupData);
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const toggleConfirmPasswordVisibility = () => {
+    setShowConfirmPassword(!showConfirmPassword);
   };
 
   return (
-    <div className="signup-container">
+    <div className={`signup-container ${isFarmer ? 'farmer' : 'vendor'}`}>
+      {/* Toggle Switch */}
       <div className="toggle-container">
         <span className={`toggle-label ${isFarmer ? 'active' : ''}`}>Farmer</span>
-        <label className="toggle-switch">
+        <label className="switch">
           <input 
             type="checkbox" 
             checked={!isFarmer}
@@ -31,58 +43,65 @@ const SignupPage = () => {
         <span className={`toggle-label ${!isFarmer ? 'active' : ''}`}>Vendor</span>
       </div>
 
+      {/* Signup Card */}
       <div className="signup-card">
-        <h2 className="signup-title">{isFarmer ? 'Farmer' : 'Vendor'} Sign Up</h2>
+        <h2 className="signup-title">Sign Up as {isFarmer ? 'Farmer' : 'Vendor'}</h2>
         
-        <form onSubmit={handleSubmit} className="signup-form">
+        <form onSubmit={handleSignup} className="signup-form">
           <div className="form-group">
             <input
               type="text"
               placeholder="Full Name"
               required
-              value={formData.name}
-              onChange={(e) => setFormData({...formData, name: e.target.value})}
+              value={signupData.name}
+              onChange={(e) => setSignupData({...signupData, name: e.target.value})}
             />
           </div>
           
           <div className="form-group">
             <input
               type="email"
-              placeholder="Email Address"
+              placeholder="Email"
               required
-              value={formData.email}
-              onChange={(e) => setFormData({...formData, email: e.target.value})}
+              value={signupData.email}
+              onChange={(e) => setSignupData({...signupData, email: e.target.value})}
             />
           </div>
           
-          <div className="form-group">
+          <div className="form-group password-group">
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               placeholder="Password"
               required
-              value={formData.password}
-              onChange={(e) => setFormData({...formData, password: e.target.value})}
+              value={signupData.password}
+              onChange={(e) => setSignupData({...signupData, password: e.target.value})}
             />
+            <span className="password-toggle" onClick={togglePasswordVisibility}>
+              {showPassword ? '👁️' : '👁️‍🗨️'}
+            </span>
           </div>
-          
-          <div className="form-group">
+
+          <div className="form-group password-group">
             <input
-              type="password"
+              type={showConfirmPassword ? "text" : "password"}
               placeholder="Confirm Password"
               required
-              value={formData.confirmPassword}
-              onChange={(e) => setFormData({...formData, confirmPassword: e.target.value})}
+              value={signupData.confirmPassword}
+              onChange={(e) => setSignupData({...signupData, confirmPassword: e.target.value})}
             />
+            <span className="password-toggle" onClick={toggleConfirmPasswordVisibility}>
+              {showConfirmPassword ? '👁️' : '👁️‍🗨️'}
+            </span>
           </div>
 
           <button type="submit" className="signup-button">
-            Create Account
+            Sign Up
           </button>
         </form>
 
-        <p className="login-link">
+        <div className="login-link">
           Already have an account? <Link to="/">Login</Link>
-        </p>
+        </div>
       </div>
     </div>
   );
