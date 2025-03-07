@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; // Step 1: Import useNavigate
 import './Signup.css';
 
 const SignupPage = () => {
@@ -12,6 +12,8 @@ const SignupPage = () => {
   });
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
+  const navigate = useNavigate(); // Step 1: Initialize useNavigate
 
   const handleSignup = (e) => {
     e.preventDefault();
@@ -27,8 +29,17 @@ const SignupPage = () => {
     setShowConfirmPassword(!showConfirmPassword);
   };
 
+  const handleGoBack = () => {
+    navigate(-1); // Step 2: Function to go back to the previous page
+  };
+
   return (
     <div className={`signup-container ${isFarmer ? 'farmer' : 'vendor'}`}>
+      {/* Go Back Button */}
+      <button onClick={handleGoBack} className="go-back-button">
+        Go Back
+      </button>
+
       {/* Toggle Switch */}
       <div className="toggle-container">
         <span className={`toggle-label ${isFarmer ? 'active' : ''}`}>Farmer</span>

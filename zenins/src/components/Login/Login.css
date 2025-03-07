@@ -223,3 +223,20 @@ background-image: url('https://t4.ftcdn.net/jpg/02/49/44/77/360_F_249447740_y1nJ
     padding: 40px 30px;
   }
 }
+
+
+.go-back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.go-back-button:hover {
+  background-color: #0056b3;
+}

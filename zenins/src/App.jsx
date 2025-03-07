@@ -41,6 +41,8 @@ import SignupPage from './components/Signup/SignupPage';
 import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 import LandingPage from './components/LandingPage/LandingPage';
 import '../src/components/LandingPage/LandingPage.css';
+import Services from './components/Services/Services';
+import ContactForm from './components/ContactForm/ContactForm';
 // import '../src/components/LandingPage/'
 
 function App() {
@@ -52,6 +54,8 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contactform" element={<ContactForm />} />
       </Routes>
     </Router>
   );

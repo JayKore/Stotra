@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
 
 const LoginPage = () => {
@@ -9,14 +9,24 @@ const LoginPage = () => {
     password: ''
   });
 
+  const navigate = useNavigate(); // Step 1: Import and initialize useNavigate
+
   const handleLogin = (e) => {
     e.preventDefault();
     // Handle login logic
     console.log('Login Data:', loginData);
   };
 
+  const handleGoBack = () => {
+    navigate(-1); // Step 2: Function to go back to the previous page
+  };
+
   return (
     <div className="login-page-container">
+      <button onClick={handleGoBack} className="go-back-button">
+        Go Back
+      </button>
+
       <div className="toggle-container">
         <span className={`toggle-label ${isFarmer ? 'active' : ''}`}>Farmer</span>
         <label className="switch">
