@@ -43,9 +43,9 @@ import LandingPage from './components/LandingPage/LandingPage';
 import '../src/components/LandingPage/LandingPage.css';
 import Services from './components/Services/Services';
 import ContactForm from './components/ContactForm/ContactForm';
+import HomePage from './components/HomePage/HomePage'
 import CombinedLogin from './components/Login/CombinedLogin';
-// import '../src/components/LandingPage/'
-
+import ProfilePage from './components/HomePage/ProfilePage';
 function App() {
   return (
     <Router>
@@ -57,6 +57,8 @@ function App() {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/services" element={<Services />} />
         <Route path="/contactform" element={<ContactForm />} />
+        <Route path="/homepage" element={<HomePage />} />
+        <Route path="/ProfilePage" element={<ProfilePage />} />
         <Route path="/combinedlogin" element={<CombinedLogin />} />
       </Routes>
     </Router>
