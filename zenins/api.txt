@@ -1,0 +1,86 @@
+Skip to main content
+Firebase logo
+Project Overview
+
+
+Strot
+Strot
+Share your feedback with Firebase
+ … 
+Participate in a Firebase research study to help us drive Firebase's full potential for all users!
+Choose a product to add to your app
+Accelerate app development
+
+Authentication
+An end-to-end user identity solution in under 10 lines of code
+
+Cloud Firestore
+Realtime updates, powerful queries, and automatic scaling
+
+Storage
+Store & retrieve user generated content
+
+Hosting
+Deploy web apps in seconds
+See all Build features
+Run and optimize your app with confidence
+
+Crashlytics
+Track, prioritize and fix stability issues that erode app quality, in realtime
+
+Performance
+Get insights into your app's performance
+
+Cloud Messaging
+Cross-platform push messaging infrastructure between your servers and user devices
+
+Remote Config
+Slowly and safely roll out new features in your app without deploying a new version
+See all Run features
+Deploy extended functionality to your app quickly
+
+Extensions
+Pre-packaged solutions that save you time
+See all Firebase features
+Finishing up…
+Build and monitor server-side generative AI features
+Add a web app
+Completed
+Register app
+2
+Add Firebase SDK
+
+Use npm
+
+Use a <script> tag
+If you don't use build tools, use this option to add and use the Firebase JS SDK. Use this option to get started, but it's not recommended for production apps. Learn more.
+
+Copy and paste these scripts into the bottom of your <body> tag, but before you use any Firebase services:
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDJ_AEd8v-nPtTT_h20iNaxemV44b5cz9c",
+    authDomain: "strot-9656b.firebaseapp.com",
+    projectId: "strot-9656b",
+    storageBucket: "strot-9656b.firebasestorage.app",
+    messagingSenderId: "647548665754",
+    appId: "1:647548665754:web:4b8b626b34c2b76f3e4423",
+    measurementId: "G-3TNX3B717X"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+
+
+
+
